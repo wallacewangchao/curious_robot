@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Large Language Models for Multi-Modal Human-Robot Interaction.">
+  <meta name="keywords" content="Robot, LLM, Planning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Large Language Models for Multi-Modal Human-Robot Interaction</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item">
+      <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"> <path fill="#808080" d="M320 0c17.7 0 32 14.3 32 32V96H472c39.8 0 72 32.2 72 72V440c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72H288V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H208zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H304zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H400zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224H64V416H48c-26.5 0-48-21.5-48-48V272c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H576V224h16z"/></svg>      
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hri-eu.github.io/AttentiveSupport/" target="_blank">
+            Attentive Support Robot
+          </a>
+          <a class="navbar-item" href="https://hri-eu.github.io/Loom/" target="_blank">
+            LLM-driven Corrective Planning of Robot Actions 
+          </a>
+          <a class="navbar-item" href="https://hri-eu.github.io/Lami/" target="_blank">
+            LLM for Multi-Modal Human-Robot Interaction
+          </a>
+          <a class="navbar-item" href="https://hri-eu.github.io/MirrorEyes/" target="_blank">
+            Explainable Human-Robot Interaction at a Glance
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <img src="static/images/chi_logo.jpg" alt="iros-24" style="width:240px;height:auto;">
+          <h1 class="title is-1 publication-title">Investigating LLM-Driven Curiosity in Human-Robot Interaction</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Jan Leusmann,
+            </span>
+
+            <span class="author-block">
+              Anna Belardinelli,
+            </span>
+
+            <span class="author-block">
+              Luke Haliburton,
+            </span>
+
+            <span class="author-block">
+              Stephan Hasler, 
+            </span>
+
+            <span class="author-block">
+              Albrecht Schmidt,
+            </span>
+
+            <span class="author-block">
+              Michael Gienger,
+            </span>
+            
+            <span class="author-block">
+              <a href="https://wallacewangchao.github.io/" target="_blank"> Chao Wang</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <a class="author-block" href="https://www.honda-ri.de/" target="_blank">Honda Research Institute EU</a>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://dl.acm.org/doi/10.1145/3706598.3713923" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-acm"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/HRI-EU/AttentiveSupport"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub</span>
+                </a>
+              </span> -->
+
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero body">
+  <div class="container is-max-desktop">
+    <img src="./static/images/teaser.jpg">
+    <h2 class="subtitle has-text-centered">
+      We imbued a robot with curious behaviors. The figure shows two examples. Left: The robot shakes a container to
+      check whether there is an object inside. Right: The robot asks for the person's preferences
+    </h2>
+  </div>
+</section>
+
+<!-- Abstract. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Integrating curious behavior traits into robots is essential for them to learn and adapt to new tasks over their lifetime and to enhance human-robot interaction. However, the effects of robots expressing curiosity on user perception, user interaction, and user experience in collaborative tasks are unclear. In this work, we present a Multimodal Large Language Model-based system that equips a robot with non-verbal and verbal curiosity traits. We conducted a user study ($N=20$) to investigate how these traits modulate the robot's behavior and the users' impressions of sociability and quality of interaction. Participants prepared cocktails or pizzas with a robot, which was either curious or non-curious. Our results show that we could create user-centric curiosity, which users perceived as more human-like, inquisitive, and autonomous while resulting in a longer interaction time. We contribute a set of design recommendations allowing system designers to take advantage of curiosity in collaborative tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container is-max-desktop">
+    <div class="hero body">
+      <video id="teaser" autoplay="autoplay" controls autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/chi25b-sub2299-cam-i67.mp4" type="video/mp4">
+      </video>
+      <p class="subtitle has-text-centered">
+        Use Cases of Large Language Models driven Multi-Modal Human-Robot Interaction
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- System. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">System</h2>
+        <div class="content has-text-justified">
+          <p>
+            The system with our curious character utilizes available capabilities to engage with the surroundings. The MM-LLM agent can actively employ functions to capture images, communicate intentions through speech and facial expression, and manipulate items.          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <img src="./static/images/system-structure.jpg">
+    </div>
+  </div>
+</section>
+
+<!-- curious behaviours. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">The robot's curious behaviors</h2>
+        <div class="content has-text-justified">
+          <p>
+            The system with our curious character utilizes available capabilities to engage with the surroundings. The MM-LLM agent can actively employ functions to capture images, communicate intentions through speech and facial expression, and manipulate items.          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <img src="./static/images/curious-behaviours-pics.jpg">
+      <img src="./static/images/curious-behaviours-table.jpg">
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Interaction Flow. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Interaction Flow</h2>
+        <div class="content has-text-justified">
+          <p>
+            An illustration of an interaction sequence with the curious robot. 1. Prior to a human entering the scene, the robot looks around the objects on the table with curiosity; 2. When a person appears, the robot greets them and asks for their name; 3. The robot inquires about the next task based on the visible objects, and the person instructs it to make a gin and tonic; 4. Before using the gin, the robot pokes the non-transparent gin container to check for emptiness; 5. The robot pours the gin into a glass; 6. The robot shakes the non-transparent container out of curiosity; 7. The robot requests the person to remove the cap as it cannot do so itself; 8. After the cap is taken off, the robot grasps the container and inspects its contents; 9. Upon discovering the ingredient, the robot asks the person for their preferred ingredient and adds it to the drink.          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-body">
+        <img src="./static/images/InteractionFlow.jpg">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- results. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+
+        </div>
+      </div>
+    </div>
+    <div id="results-carousel" class="carousel results-carousel">
+
+      <div>
+        <h2 class="subtitle has-text-centered">
+          Substracted state transition matrices for both Scenarios substracting the non-curious Character transitions from the curious Character transitions. One field describes the difference between the two Characters for one transition type. Positive (green) values mean that the curious Character performed this transition more often than the non-curious. E.g., The curious system had 11% fewer “Doing” to “Failing” event state transitions than the non-curious system.        <div class="container">
+          <img src="./static/images/Figure-5.jpg">
+        </div>
+    
+      </div>
+      
+      <div>
+        <h2 class="subtitle has-text-centered">
+          Boxplots comparing system and user behavior metrics between the curious (green) and non-curious (yellow) characters. The plots show distributions of positive sentiment utterances, actions per turn, and actor turns per minute, highlighting key differences in sentiment expression and behavior dynamics.        </h2>
+        <div class="container">
+          <img src="./static/images/Figure-6.jpg">
+        </div>
+      </div>
+
+      <div>
+        <h2 class="subtitle has-text-centered">
+          Boxplots of questionnaire results per Character. From left to right: (a) PSC with the three subscales: PSCE, PSCI, PSCS, (b) Godspeed with the five subscales: anthropomorphism, animacy, likability, perceived intelligence, perceived safety, (c) SUS, and (d) raw NASA-TLX.
+        </h2>
+        <div class="container">
+          <img src="./static/images/Figure-7.jpg">
+        </div>
+      </div>
+
+      <div>
+        <h2 class="subtitle has-text-centered">
+          Results of the statistical analysis of all questionnaires.
+        </h2>
+        <div class="container">
+          <img src="./static/images/table-2.jpg">
+        </div>
+    
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template.
+          </p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+<script>hljs.highlightAll();</script>
+
